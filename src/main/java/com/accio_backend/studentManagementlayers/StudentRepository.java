@@ -33,7 +33,7 @@ public class StudentRepository {
     //delete info
     public String deleteStudent(int admnNo) {
         if(!db.containsKey(admnNo)) {
-            return "Invalid Admission no.";
+            return null;
         }
 
         db.remove(admnNo);
@@ -43,11 +43,11 @@ public class StudentRepository {
     //update info
     public String updateStudent(int admnNo, int age) {
         if(!db.containsKey(admnNo)) {
-            return "Can't find student with mentioned Admission no.";
+            return null;
         }
 
         db.get(admnNo).setAge(age);
-        return "Data of student with Admission no. " +admnNo+ " has been updated.";
+        return "Age of student with Admission no. " +admnNo+ " has been updated.";
 
         //Student student = db.get(admnNo);
         //student.setAge(age);
